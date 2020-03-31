@@ -41,7 +41,7 @@ class GiphyRandom extends Command
             throw new Exception('Something gone wrong');
         }
 
-        $output = $this->generateJsonOutput($giphy);
+        $output = $this->output($giphy);
 
         $this->line($output);
     }
@@ -52,13 +52,11 @@ class GiphyRandom extends Command
     }
 
     /**
-     * Generates a JSON string that represents the GIF data
-     *
-     * @param GifData $gifData the GIF data
+     * takes data from giphy model and json encodes as data is protected
      *
      * @return string the JSON string
      */
-    public function generateJsonOutput(Giphy $gifData)
+    public function output(Giphy $giphy)
     {
         return json_encode([
             'data' => [
