@@ -58,15 +58,6 @@ class GiphySearch extends Command
      */
     public function output(Giphy $giphy)
     {
-        return json_encode([
-            'data' => [
-                'url' => $gifData->getUrl(),
-                'title' => $gifData->getTitle(),
-                'width' => $gifData->getWidth(),
-                'height' => $gifData->getHeight(),
-                'frame_count' => $gifData->getFrameCount(),
-                'size' => $gifData->getSize(),
-            ],
-        ]);
+        return json_encode(get_giphy($giphy));
     }
 }

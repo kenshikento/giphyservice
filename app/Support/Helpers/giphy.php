@@ -3,13 +3,13 @@
 use App\Giphy;
 
 /**
- * Helper for model getters using enums.
+ * Helper for model getters using giphy from model.
  *
  * @param  string $class
  * @param  mixed $value
  * @return ?Enum
  */
-function set_giphy(Giphy $giphy)
+function get_giphy(Giphy $giphy)
 {
     return collect([
         'url' => $giphy->getUrl(),

@@ -17,7 +17,6 @@ class FakerGateway implements GiphyDriverInterface
      */
     protected $faker;
 
-
     public function __construct(Generator $faker) 
     {
         $this->faker = $faker;
@@ -38,9 +37,9 @@ class FakerGateway implements GiphyDriverInterface
      * @var Client
      */
     public function seed()
-    {
+    {   
         $model = new Giphy();
-        $model->setUrl($this->faker->url);
+        $model->setUrl($this->faker->imageUrl());
         $model->setTitle($this->faker->words(3, true));
         $model->setWidth($this->faker->numberBetween(64, 128));
         $model->setHeight($this->faker->numberBetween(64, 128));

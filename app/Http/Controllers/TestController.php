@@ -14,8 +14,8 @@ class TestController extends Controller
     public function random(GiphyManager $manager)
     {
         $data = $manager->random(); 
-
-        $giphy = set_giphy($data);
+        // TODO: Needs Caching element
+        $giphy = get_giphy($data);
 
         return view('test')
             ->with('giphy', $giphy)
